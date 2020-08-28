@@ -10,4 +10,5 @@ import SwiftUI
 
 struct MyColors {
     static let greengray = Color("GreenGray")
+    static let lightgrey = Color("LightGrey")
 }

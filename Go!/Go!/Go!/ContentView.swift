@@ -12,15 +12,12 @@ struct ContentView: View {
     var body: some View {
         VStack {
             GeometryReader { g in
-//                    Image("goIcon").resizable().scaledToFit().padding(10)
-               
+                HStack(alignment: .center) {
+                    Image("goIcon").resizable().scaledToFit().frame(width: g.size.width/6, height: g.size.height/15)
+                    Text("Go!").font(.title).fontWeight(.black).foregroundColor(MyColors.greengray)
+                }.frame(width: g.size.width)
                 
-                Text("Go!")
-                        .font(.largeTitle).fontWeight(.black).foregroundColor(MyColors.greengray)
-                    .frame(width: g.size.width/6, height: g.size.height/10)
-                    .offset(x: g.size.width/2, y: 0)
-                
-
+                RoundedRectangle(cornerRadius: 10).frame(width: g.size.width + 10, height: g.size.width/150).offset(y: g.size.height/15)
                 
 //                Spacer()
 //                HStack {
@@ -33,7 +30,7 @@ struct ContentView: View {
                     }
                     .clipShape(Circle())
                     .overlay(Circle().stroke(MyColors.greengray, lineWidth: g.size.width/150))
-//                    .padding(.leading)
+                    .padding(.leading)
                      .offset(x: g.size.width/1000, y: g.size.height - 2.125 * (g.size.height/10))
 //                    Spacer()
 //                }
@@ -50,7 +47,8 @@ struct ContentView: View {
                     .clipShape(Circle())
                     .overlay(Circle().stroke(MyColors.greengray, lineWidth: g.size.width/150))
 //                    .background(Capsule().stroke(MyColors.greengray, lineWidth: 3))
-//                    .padding(.leading)
+                    .padding(.leading)
+                        .padding(.bottom)
                     .offset(x: g.size.width/1000, y: g.size.height - g.size.height/10)
 
 
@@ -59,16 +57,18 @@ struct ContentView: View {
                     Button(action: {
                         print("New Plan!")
                         }) {
-                            Image("newIcon").resizable().scaledToFit().padding(30)
+                            Image("newIcon").resizable().scaledToFit().padding()
                                 .frame(width: g.size.width/6, height: g.size.height/10)
                                 .foregroundColor(Color.white)
                                 .background(MyColors.greengray)
                             .clipShape(Circle())
                     }
-//                    .padding(.trailing)
-                    .offset(x: g.size.width - g.size.width/6, y: g.size.height - g.size.height/10)
+                    .offset(x: g.size.width - g.size.width/5, y: g.size.height - g.size.height/10)
+                    .padding(.trailing)
+                    .padding(.bottom)
 
 //                }
+                
             }
         }
     }

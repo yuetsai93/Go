@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33422BEC24F8DB290041D2AD /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33422BEB24F8DB290041D2AD /* SideMenuView.swift */; };
 		33BCDF3024F2557B00936D6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF2F24F2557B00936D6C /* AppDelegate.swift */; };
 		33BCDF3224F2557B00936D6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF3124F2557B00936D6C /* SceneDelegate.swift */; };
 		33BCDF3424F2557B00936D6C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF3324F2557B00936D6C /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33422BEB24F8DB290041D2AD /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		33BCDF2C24F2557B00936D6C /* Go!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33BCDF2F24F2557B00936D6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33BCDF3124F2557B00936D6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				33BCDF4524F57AA800936D6C /* GoRow.swift */,
 				33BCDF3524F2558100936D6C /* Assets.xcassets */,
 				33BCDF4724F5992500936D6C /* MyColors.swift */,
+				33422BEB24F8DB290041D2AD /* SideMenuView.swift */,
 				33BCDF3A24F2558100936D6C /* LaunchScreen.storyboard */,
 				33BCDF3D24F2558100936D6C /* Info.plist */,
 				33BCDF3724F2558100936D6C /* Preview Content */,
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33422BEC24F8DB290041D2AD /* SideMenuView.swift in Sources */,
 				33BCDF4624F57AA800936D6C /* GoRow.swift in Sources */,
 				33BCDF4824F5992500936D6C /* MyColors.swift in Sources */,
 				33BCDF3024F2557B00936D6C /* AppDelegate.swift in Sources */,

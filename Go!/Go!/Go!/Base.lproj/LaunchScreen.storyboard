@@ -24,7 +24,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Go! Icon" translatesAutoresizingMaskIntoConstraints="NO" id="l7f-jf-xkc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goIcon" translatesAutoresizingMaskIntoConstraints="NO" id="l7f-jf-xkc">
                                 <rect key="frame" x="107" y="308" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="0p9-FV-kHV"/>
@@ -49,6 +49,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Go! Icon" width="848" height="848"/>
+        <image name="goIcon" width="848" height="848"/>
     </resources>
 </document>
