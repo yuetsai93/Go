@@ -22,21 +22,47 @@ struct ContentView: View {
 //                }
 //            }
         
-        return GeometryReader { g in
-            ZStack(alignment: .leading) {
-                MainView(menuShowed: self.$menuShown)
-                    .frame(width: g.size.width, height: g.size.height)
-                    .offset(x: self.menuShown ? g.size.width / 1.6 : 0)
-//                    .disabled(self.menuShown ? true : false)
-                if self.menuShown {
-                    SideMenuView()
-                        .frame(width: g.size.width/1.6)
-                        .transition(.move(edge: .leading))
+        return ZStack(alignment: .top) {
+            NavigationView {
+                GeometryReader { g in
+                ZStack(alignment: .leading) {
+                    MainView(menuShowed: self.$menuShown)
+                        .frame(width: g.size.width, height: g.size.height)
+                        .offset(x: self.menuShown ? g.size.width / 1.6 : 0)
+    //                    .disabled(self.menuShown ? true : false)
+                    if self.menuShown {
+                        SideMenuView()
+                            .frame(width: g.size.width/1.6)
+                            .transition(.move(edge: .leading))
+                    }
                 }
+    //        .gesture(tapToClose)
+                   
             }
-//        .gesture(tapToClose)
+    //        .navigationBarTitleView(Image("goIcon"))
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(leading:
+                HStack {
+                    Button(action: {withAnimation {
+                        self.menuShown.toggle()
+                        }
+                    }) {
+                        Image(systemName: "list.dash").foregroundColor(MyColors.greengray)
+                    }
+                }
+    //            , trailing:
+    //            HStack {
+    //                Image("goIcon").resizable().frame(width: 40, height: 40)
+    //            }
+            )
+            }
+            
+            HStack {
+                // TODO: hardcoded frame for now, change it after finishing the logics
+                Image("goIcon").resizable().scaledToFit().frame(width:40, height:40)
+                Text("Go!").font(.title)
+            }
         }
-        
     }
 }
 
@@ -50,9 +76,12 @@ struct MainView: View {
                 HStack(alignment: .center) {
                     Image("goIcon").resizable().scaledToFit().frame(width: g.size.width/6, height: g.size.height/15)
                     Text("Go!").font(.title).fontWeight(.black).foregroundColor(MyColors.greengray)
-                }.frame(width: g.size.width)
+                }
+                .frame(width: g.size.width)
+                .background(MyColors.lightgrey)
+//                .edgesIgnoringSafeArea()
                 
-                RoundedRectangle(cornerRadius: 10).frame(width: g.size.width + 10, height: g.size.width/150).offset(y: g.size.height/15)
+//                RoundedRectangle(cornerRadius: 10).frame(width: g.size.width + 10, height: g.size.width/150).offset(y: g.size.height/15)
                 
 //                Spacer()
 //                HStack {
@@ -109,6 +138,7 @@ struct MainView: View {
                 
             }
         }
+        .edgesIgnoringSafeArea(.all)
 
     }
 }

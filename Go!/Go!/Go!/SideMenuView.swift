@@ -36,7 +36,7 @@ struct SideMenuView: View {
                 // Top row
                 HStack {
                     Image(systemName: "house.fill").foregroundColor(MyColors.greengray).padding(.leading)
-                    Text("Menu").modifier(TitleStyle())
+                    Text("All").modifier(TitleStyle())
                     Spacer()
 //                    Button(action: {
 //                        self.size = 10
