@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3337477124FA4736009003FE /* NewPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3337477024FA4736009003FE /* NewPlanView.swift */; };
+		3337477324FA474C009003FE /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3337477224FA474C009003FE /* MainPageView.swift */; };
 		33422BEC24F8DB290041D2AD /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33422BEB24F8DB290041D2AD /* SideMenuView.swift */; };
 		33422BEF24FA361B0041D2AD /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 33422BEE24FA361B0041D2AD /* SwiftUIX */; };
 		33422BF224FA37B20041D2AD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33422BF124FA37B20041D2AD /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3337477024FA4736009003FE /* NewPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlanView.swift; sourceTree = "<group>"; };
+		3337477224FA474C009003FE /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		33422BEB24F8DB290041D2AD /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		33422BF124FA37B20041D2AD /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		33BCDF2C24F2557B00936D6C /* Go!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +85,8 @@
 				33BCDF2F24F2557B00936D6C /* AppDelegate.swift */,
 				33BCDF3124F2557B00936D6C /* SceneDelegate.swift */,
 				33BCDF3324F2557B00936D6C /* ContentView.swift */,
+				3337477024FA4736009003FE /* NewPlanView.swift */,
+				3337477224FA474C009003FE /* MainPageView.swift */,
 				33BCDF4924F623FF00936D6C /* Colors.xcassets */,
 				33BCDF4524F57AA800936D6C /* GoRow.swift */,
 				33BCDF3524F2558100936D6C /* Assets.xcassets */,
@@ -181,6 +187,8 @@
 			files = (
 				33422BEC24F8DB290041D2AD /* SideMenuView.swift in Sources */,
 				33BCDF4624F57AA800936D6C /* GoRow.swift in Sources */,
+				3337477324FA474C009003FE /* MainPageView.swift in Sources */,
+				3337477124FA4736009003FE /* NewPlanView.swift in Sources */,
 				33BCDF4824F5992500936D6C /* MyColors.swift in Sources */,
 				33BCDF3024F2557B00936D6C /* AppDelegate.swift in Sources */,
 				33BCDF3224F2557B00936D6C /* SceneDelegate.swift in Sources */,
