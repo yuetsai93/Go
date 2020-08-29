@@ -9,6 +9,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // state variable to control whether the side menu is showing
+    @State var menuShown = false
+    
+    var body: some View {
+        
+//        let tapToClose = DragGesture()
+//            .onEnded{
+//                if $0.translation.width < -100 {
+//                    self.menuShown = false
+//                }
+//            }
+        
+        return GeometryReader { g in
+            ZStack(alignment: .leading) {
+                MainView(menuShowed: self.$menuShown)
+                    .frame(width: g.size.width, height: g.size.height)
+                    .offset(x: self.menuShown ? g.size.width / 1.6 : 0)
+//                    .disabled(self.menuShown ? true : false)
+                if self.menuShown {
+                    SideMenuView()
+                        .frame(width: g.size.width/1.6)
+                        .transition(.move(edge: .leading))
+                }
+            }
+//        .gesture(tapToClose)
+        }
+        
+    }
+}
+
+// The main screen of Go!
+struct MainView: View {
+    
+    @Binding var menuShowed: Bool
     var body: some View {
         VStack {
             GeometryReader { g in
@@ -22,6 +57,9 @@ struct ContentView: View {
 //                Spacer()
 //                HStack {
                      Button(action: {
+                        withAnimation {
+                            self.menuShowed.toggle()
+                        }
                         print("Menu pressed!")
                         }) {
                             Image("menuIcon").resizable().scaledToFit().padding(10)
@@ -71,6 +109,7 @@ struct ContentView: View {
                 
             }
         }
+
     }
 }
 
