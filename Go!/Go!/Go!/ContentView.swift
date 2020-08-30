@@ -12,7 +12,7 @@ struct ContentView: View {
     
     // state variable to control whether the side menu is showing
     @State var menuShown = false
-    
+        
     var body: some View {
         
 //        let tapToClose = DragGesture()

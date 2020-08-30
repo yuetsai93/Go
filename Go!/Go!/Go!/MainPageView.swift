@@ -64,18 +64,30 @@ struct MainPageView: View {
 
                     // AddPlan button
 //                    Spacer()
-                    Button(action: {
-                        print("New Plan!")
-                        }) {
-                            Image("newIcon").resizable().scaledToFit().padding()
-                                .frame(width: g.size.width/6, height: g.size.height/10)
-                                .foregroundColor(Color.white)
-                                .background(MyColors.greengray)
-                            .clipShape(Circle())
-                    }
-                    .offset(x: g.size.width - g.size.width/5, y: g.size.height - g.size.height/10)
-                    .padding(.trailing)
-                    .padding(.bottom)
+                NavigationLink(destination: NewPlanView()) {
+                    Image("newIcon")
+                        .resizable()
+                        .scaledToFit()
+                        .padding()
+                        .foregroundColor(Color.white)
+                        .background(MyColors.greengray)
+                    .clipShape(Circle())
+                }
+                .frame(width: g.size.width/5, height: g.size.height/8)
+                .offset(x: g.size.width - g.size.width / 6 * 1.5, y: g.size.height - g.size.width / 5 * 1.5)
+
+//                    Button(action: {
+//                        print("New Plan!")
+//                        }) {
+//                            Image("newIcon").resizable().scaledToFit().padding()
+//                                .frame(width: g.size.width/6, height: g.size.height/10)
+//                                .foregroundColor(Color.white)
+//                                .background(MyColors.greengray)
+//                            .clipShape(Circle())
+//                    }
+//                    .offset(x: g.size.width - g.size.width/5, y: g.size.height - g.size.height/10)
+//                    .padding(.trailing)
+//                    .padding(.bottom)
 
 //                }
                 
