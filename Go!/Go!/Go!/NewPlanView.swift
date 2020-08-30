@@ -9,8 +9,36 @@
 import SwiftUI
 
 struct NewPlanView: View {
+    
+    @State var title: String = ""
+    @State var content: String = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: true) {
+                GeometryReader { g in
+                    VStack(alignment: .center) {
+                        Image("placeholder")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: g.size.width/2)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                            .shadow(radius: 10)
+                        TextField("Title", text: self.$title)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                        Text("\(self.title)").font(.title)
+                        TextField("Content", text: self.$content)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                        Text("\(self.content)")
+                    }
+                }
+            }
+        }
+        .navigationBarTitle("New Plan", displayMode: .inline)
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

@@ -56,9 +56,9 @@ struct SideMenuView: View {
                             Image("settingsIcon").resizable().scaledToFit().padding(5)
                             .frame(width: g.size.width/6, height: g.size.height/10).foregroundColor(MyColors.greengray)
                             Text("Settings").modifier(TitleStyle())
-                        }
-                        .frame(width: g.size.width, height: g.size.height/10)
+                        }                        .frame(width: g.size.width, height: g.size.height/10)
                         .background(MyColors.lightgrey)
+                        .cornerRadius(40)
 //                        .buttonStyle(PlainButtonStyle())
                 }
             }
