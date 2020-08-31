@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3337477124FA4736009003FE /* NewPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3337477024FA4736009003FE /* NewPlanView.swift */; };
 		3337477324FA474C009003FE /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3337477224FA474C009003FE /* MainPageView.swift */; };
 		33422BEC24F8DB290041D2AD /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33422BEB24F8DB290041D2AD /* SideMenuView.swift */; };
-		33422BEF24FA361B0041D2AD /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 33422BEE24FA361B0041D2AD /* SwiftUIX */; };
 		33422BF224FA37B20041D2AD /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33422BF124FA37B20041D2AD /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		33BCDF3024F2557B00936D6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF2F24F2557B00936D6C /* AppDelegate.swift */; };
 		33BCDF3224F2557B00936D6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF3124F2557B00936D6C /* SceneDelegate.swift */; };
@@ -47,7 +46,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33422BF224FA37B20041D2AD /* SwiftUI.framework in Frameworks */,
-				33422BEF24FA361B0041D2AD /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +122,6 @@
 			);
 			name = "Go!";
 			packageProductDependencies = (
-				33422BEE24FA361B0041D2AD /* SwiftUIX */,
 			);
 			productName = "Go!";
 			productReference = 33BCDF2C24F2557B00936D6C /* Go!.app */;
@@ -155,7 +152,6 @@
 			);
 			mainGroup = 33BCDF2324F2557B00936D6C;
 			packageReferences = (
-				33422BED24FA361B0041D2AD /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = 33BCDF2D24F2557B00936D6C /* Products */;
 			projectDirPath = "";
@@ -333,6 +329,7 @@
 				DEVELOPMENT_TEAM = FGQ58Y3A8Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Go!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,6 +350,7 @@
 				DEVELOPMENT_TEAM = FGQ58Y3A8Q;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Go!/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -386,25 +384,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		33422BED24FA361B0041D2AD /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		33422BEE24FA361B0041D2AD /* SwiftUIX */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 33422BED24FA361B0041D2AD /* XCRemoteSwiftPackageReference "SwiftUIX" */;
-			productName = SwiftUIX;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33BCDF2424F2557B00936D6C /* Project object */;
 }
