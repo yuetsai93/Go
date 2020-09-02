@@ -15,14 +15,14 @@ struct NewPlanView: View {
     var statusList = ["Planning", "Ongoing", "Completed"]
     @State var selectedStatusIndex = 0
     
-    @State var location: String = ""
     @State var rating = 0.0
-    @State var content: String = ""
+    @State var location: String = ""
     @State var startDate = Date()
 //    @State var showDatePicker = false
 //    @State var date = Date()
     @State var endDate = Date()
-    
+    @State var content: String = ""
+
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -73,7 +73,7 @@ struct NewPlanView: View {
                             Stepper(value: self.$rating, in: 0...5, step: 0.5) {
                                 Text("Rating: \(self.rating, specifier: "%.1f")")
                             }
-                            TextField("Location", text: self.$content)
+                            TextField("Location", text: self.$location)
 //                                .modifier(TextFieldModifier())
                             
                             DatePicker("Start Date: ", selection: self.$startDate, displayedComponents: .date)
@@ -92,7 +92,7 @@ struct NewPlanView: View {
 //                            DatePicker("", selection: self.$date, displayedComponents: .date)
 //                        }
 
-                            TextField("Content", text: self.$content)
+                            multiline(txt: self.$content)
 //                                .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .frame(height: g.size.height / 3)
 
@@ -113,6 +113,49 @@ struct NewPlanView: View {
 //        .edgesIgnoringSafeArea(.all)
     }
 }
+
+
+// Code from https://kavsoft.tech/Swift/Todo/
+struct multiline : UIViewRepresentable {
+    
+    
+    @Binding var txt : String
+    
+    func makeCoordinator() -> multiline.Coordinator {
+        
+        return multiline.Coordinator(parent1: self)
+        
+    }
+    func makeUIView(context: UIViewRepresentableContext<multiline>) -> UITextView{
+        
+        let textview = UITextView()
+        textview.font = .systemFont(ofSize: 18)
+        textview.delegate = context.coordinator
+        return textview
+    }
+    
+    func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<multiline>) {
+        
+        uiView.text = txt
+    }
+    
+    class Coordinator : NSObject,UITextViewDelegate{
+        
+        var parent : multiline
+        
+        init(parent1 : multiline) {
+            
+            parent = parent1
+        }
+        
+        func textViewDidChange(_ textView: UITextView) {
+            
+            self.parent.txt = textView.text
+        }
+    }
+}
+
+
 
 struct NewPlanView_Previews: PreviewProvider {
     static var previews: some View {
