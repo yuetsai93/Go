@@ -17,9 +17,9 @@
 		33BCDF3624F2558100936D6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33BCDF3524F2558100936D6C /* Assets.xcassets */; };
 		33BCDF3924F2558100936D6C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33BCDF3824F2558100936D6C /* Preview Assets.xcassets */; };
 		33BCDF3C24F2558100936D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33BCDF3A24F2558100936D6C /* LaunchScreen.storyboard */; };
-		33BCDF4624F57AA800936D6C /* GoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF4524F57AA800936D6C /* GoRow.swift */; };
+		33BCDF4624F57AA800936D6C /* PlanRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF4524F57AA800936D6C /* PlanRow.swift */; };
 		33BCDF4824F5992500936D6C /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF4724F5992500936D6C /* MyColors.swift */; };
-		33BCDF4A24F623FF00936D6C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33BCDF4924F623FF00936D6C /* Colors.xcassets */; };
+		33E6B80624FF584400B19235 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E6B80524FF584400B19235 /* Plan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +35,9 @@
 		33BCDF3824F2558100936D6C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		33BCDF3B24F2558100936D6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33BCDF3D24F2558100936D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		33BCDF4524F57AA800936D6C /* GoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoRow.swift; sourceTree = "<group>"; };
+		33BCDF4524F57AA800936D6C /* PlanRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRow.swift; sourceTree = "<group>"; };
 		33BCDF4724F5992500936D6C /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
-		33BCDF4924F623FF00936D6C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		33E6B80524FF584400B19235 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +85,8 @@
 				33BCDF3324F2557B00936D6C /* ContentView.swift */,
 				3337477024FA4736009003FE /* NewPlanView.swift */,
 				3337477224FA474C009003FE /* MainPageView.swift */,
-				33BCDF4924F623FF00936D6C /* Colors.xcassets */,
-				33BCDF4524F57AA800936D6C /* GoRow.swift */,
+				33BCDF4524F57AA800936D6C /* PlanRow.swift */,
+				33E6B80524FF584400B19235 /* Plan.swift */,
 				33BCDF3524F2558100936D6C /* Assets.xcassets */,
 				33BCDF4724F5992500936D6C /* MyColors.swift */,
 				33422BEB24F8DB290041D2AD /* SideMenuView.swift */,
@@ -168,7 +168,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				33BCDF3C24F2558100936D6C /* LaunchScreen.storyboard in Resources */,
-				33BCDF4A24F623FF00936D6C /* Colors.xcassets in Resources */,
 				33BCDF3924F2558100936D6C /* Preview Assets.xcassets in Resources */,
 				33BCDF3624F2558100936D6C /* Assets.xcassets in Resources */,
 			);
@@ -182,10 +181,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				33422BEC24F8DB290041D2AD /* SideMenuView.swift in Sources */,
-				33BCDF4624F57AA800936D6C /* GoRow.swift in Sources */,
+				33BCDF4624F57AA800936D6C /* PlanRow.swift in Sources */,
 				3337477324FA474C009003FE /* MainPageView.swift in Sources */,
 				3337477124FA4736009003FE /* NewPlanView.swift in Sources */,
 				33BCDF4824F5992500936D6C /* MyColors.swift in Sources */,
+				33E6B80624FF584400B19235 /* Plan.swift in Sources */,
 				33BCDF3024F2557B00936D6C /* AppDelegate.swift in Sources */,
 				33BCDF3224F2557B00936D6C /* SceneDelegate.swift in Sources */,
 				33BCDF3424F2557B00936D6C /* ContentView.swift in Sources */,

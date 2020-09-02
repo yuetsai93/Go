@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// The root view to integrate all the subviews of Go!.
 struct ContentView: View {
     
     // state variable to control whether the side menu is showing

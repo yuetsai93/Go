@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+// The home page of ths app. Users will see this page after the launch screen.
 struct MainPageView: View {
     
     @Binding var menuShown: Bool

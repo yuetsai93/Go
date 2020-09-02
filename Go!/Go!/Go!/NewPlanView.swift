@@ -8,20 +8,26 @@
 
 import SwiftUI
 
+// The page for users to create new plans. This page will show when users tap on the add button.
 struct NewPlanView: View {
     
-    @State var title: String = ""
+//    @State var cover = Image("placeholder")
+    
+    @State var title = ""
+    
+    // Update to use picker to choose from existing genres, and add new genres later
+    @State var genre = ""
     
     var statusList = ["Planning", "Ongoing", "Completed"]
     @State var selectedStatusIndex = 0
     
     @State var rating = 0.0
-    @State var location: String = ""
+    @State var location = ""
     @State var startDate = Date()
 //    @State var showDatePicker = false
 //    @State var date = Date()
     @State var endDate = Date()
-    @State var content: String = ""
+    @State var content = ""
 
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
