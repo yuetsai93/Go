@@ -23,7 +23,7 @@ struct PlanRow: View {
 
             HStack {
                 // Add image box here
-
+                Image("placeholder").resizable().scaledToFit()
 
                 VStack {
                     Text(plan.title)
@@ -44,6 +44,7 @@ struct PlanRow: View {
     }
 }
 
+// For testing preview
 
 //    var body: some View {
 //

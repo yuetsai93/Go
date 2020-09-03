@@ -12,7 +12,7 @@ struct Plan {
     
     let title: String
     let status: String
-    let rating: Float
+    let rating: Double
     let location: String
     let genre: String
     let startDate: Date

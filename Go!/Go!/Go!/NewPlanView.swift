@@ -11,6 +11,8 @@ import SwiftUI
 // The page for users to create new plans. This page will show when users tap on the add button.
 struct NewPlanView: View {
     
+    @Binding var newPageShown: Bool
+    
 //    @State var cover = Image("placeholder")
     
     @State var title = ""
@@ -29,6 +31,9 @@ struct NewPlanView: View {
     @State var endDate = Date()
     @State var content = ""
 
+    let onComplete: (String, String, Double, String, String, Date, Date, String) -> Void
+
+    
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -107,16 +112,28 @@ struct NewPlanView: View {
                         
                     }
                 }
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(
+                trailing:
+                Button(action: savePlan) {
+                    Text("Save")
+            })
 //            }scrollview
+        
         }
-        .navigationBarTitle("", displayMode: .inline)
-        .navigationBarItems(
-            trailing:
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
-                Text("Save")
-            }
-        )
 //        .edgesIgnoringSafeArea(.all)
+    }
+    
+    private func savePlan() {
+        onComplete(
+        title.isEmpty ? "" : title,
+        statusList[selectedStatusIndex],
+        rating,
+        location.isEmpty ? "" : location,
+        genre.isEmpty ? "" : genre,
+        startDate,
+        endDate,
+        content.isEmpty ? "" : content)
     }
 }
 
@@ -163,8 +180,8 @@ struct multiline : UIViewRepresentable {
 
 
 
-struct NewPlanView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewPlanView()
-    }
-}
+//struct NewPlanView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NewPlanView()
+//    }
+//}
