@@ -49,21 +49,12 @@ struct MainPageView: View {
                                                 .foregroundColor(Color.white)
                                                 .background(MyColors.greengray)
                                                 .clipShape(Circle())
-                                                .shadow(color: MyColors.greengray.opacity(0.3), radius: 3, x: 3, y: 3)
+                                                .shadow(color: MyColors.greengray.opacity(0.4), radius: 5, x: 5, y: 5)
                         }.padding(.trailing)
                     }
                 }
             }
-              .navigationBarTitle(Text("Plans"))
-//            .navigationBarItems(trailing:
-//              Button(action: { self.newPageShown.toggle() }) {
-//                Image(systemName: "plus")
-//              }
-//          )
-            
-//            .frame(width: g.size.width/5, height: g.size.height/8)
-//            .offset(x: g.size.width - g.size.width / 6 * 1.5, y: g.size.height - g.size.width / 5 * 1.5)
-           
+//              .navigationBarTitle(Text("Plans"))
         }
         
         
@@ -174,7 +165,7 @@ struct MainPageView: View {
         
     }
     
-    }
+}
 
     
 

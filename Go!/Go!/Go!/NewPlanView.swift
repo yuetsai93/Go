@@ -18,7 +18,8 @@ struct NewPlanView: View {
     @State var title = ""
     
     // Update to use picker to choose from existing genres, and add new genres later
-    @State var genre = ""
+    var tagList = ["None", "👣Travel", "🏂Sports"]
+    @State var selectedTagIndex = 0
     
     var statusList = ["Planning", "Ongoing", "Completed"]
     @State var selectedStatusIndex = 0
@@ -53,43 +54,45 @@ struct NewPlanView: View {
         NavigationView {
 //            ScrollView(.vertical, showsIndicators: true) {
             GeometryReader { g in
-                    VStack(alignment: .center) {
-                        Form {
-                            ZStack(alignment: .top) {
-                                Image("worldmap")
-                                    .resizable()
-                                    .scaledToFit()
-                                Image("placeholder")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .padding(.top)
-                                    .frame(width: g.size.width/2)
-                                    .clipShape(Circle())
-                                    .overlay(Circle().stroke(Color.white, lineWidth: 3))
-                                    .shadow(radius: 10)
-                            }
+                VStack(alignment: .center) {
+                    Form {
+                        ZStack(alignment: .top) {
+                            Image("worldmap")
+                                .resizable()
+                                .scaledToFit()
+                            Image("placeholder")
+                                .resizable()
+                                .scaledToFill()
+                                .padding(.top)
+                                .frame(width: g.size.width/2)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.white, lineWidth: 3))
+                                .shadow(radius: 10)
+                        }
+                    
+                        TextField("Title", text: self.$title)
                         
-                            TextField("Title", text: self.$title)
-//                                .textFieldStyle(RoundedBorderTextFieldStyle())
-//                                .padding(.leading)
-//                                .padding(.trailing)
-//                                .padding(.bottom)
+                        Picker(selection: self.$selectedTagIndex, label: Text("Tag: ")) {
+                            ForEach(0 ..< self.tagList.count) {
+                            Text(self.tagList[$0])
+                            }
+                        }
+                        
+                        Picker(selection: self.$selectedStatusIndex, label: Text("Status: ")) {
+                            ForEach(0 ..< self.statusList.count) {
+                            Text(self.statusList[$0])
+                            }
+                        }
                             
-                            Picker(selection: self.$selectedStatusIndex, label: Text("Status: ")) {
-                                ForEach(0 ..< self.statusList.count) {
-                                Text(self.statusList[$0])
-                                }
-                            }
-                                
-                            Stepper(value: self.$rating, in: 0...5, step: 0.5) {
-                                Text("Rating: \(self.rating, specifier: "%.1f")")
-                            }
-                            TextField("Location", text: self.$location)
+                        Stepper(value: self.$rating, in: 0...5, step: 0.5) {
+                            Text("Rating: \(self.rating, specifier: "%.1f")")
+                        }
+                        TextField("Location", text: self.$location)
 //                                .modifier(TextFieldModifier())
-                            
-                            DatePicker("Start Date: ", selection: self.$startDate, displayedComponents: .date)
-                            DatePicker("End Date: ", selection: self.$endDate, displayedComponents: .date)
-                            // Connect textfield with datepicker
+                        
+                        DatePicker("Start Date: ", selection: self.$startDate, displayedComponents: .date)
+                        DatePicker("End Date: ", selection: self.$endDate, displayedComponents: .date)
+                        // Connect textfield with datepicker
 //                            TextField("Start Date", text: self.$startDate, onEditingChanged: { (editting) in
 //                            self.showDatePicker = editting
 //                                print("\(editting)")
@@ -103,16 +106,14 @@ struct NewPlanView: View {
 //                            DatePicker("", selection: self.$date, displayedComponents: .date)
 //                        }
 
-                            multiline(txt: self.$content)
+                        MultilineTextField(txt: self.$content)
 //                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .frame(height: g.size.height / 3)
+                            .frame(height: g.size.height / 3)
 
-                        }
-                            
-                        
                     }
                 }
-            .navigationBarTitle("", displayMode: .inline)
+            }
+            .navigationBarTitle("New Plan", displayMode: .inline)
             .navigationBarItems(
                 trailing:
                 Button(action: savePlan) {
@@ -130,7 +131,7 @@ struct NewPlanView: View {
         statusList[selectedStatusIndex],
         rating,
         location.isEmpty ? "" : location,
-        genre.isEmpty ? "" : genre,
+        tagList[selectedTagIndex],
         startDate,
         endDate,
         content.isEmpty ? "" : content)
@@ -139,17 +140,17 @@ struct NewPlanView: View {
 
 
 // Code from https://kavsoft.tech/Swift/Todo/
-struct multiline : UIViewRepresentable {
+struct MultilineTextField : UIViewRepresentable {
     
     
     @Binding var txt : String
     
-    func makeCoordinator() -> multiline.Coordinator {
+    func makeCoordinator() -> MultilineTextField.Coordinator {
         
-        return multiline.Coordinator(parent1: self)
+        return MultilineTextField.Coordinator(parent1: self)
         
     }
-    func makeUIView(context: UIViewRepresentableContext<multiline>) -> UITextView{
+    func makeUIView(context: UIViewRepresentableContext<MultilineTextField>) -> UITextView{
         
         let textview = UITextView()
         textview.font = .systemFont(ofSize: 18)
@@ -157,16 +158,16 @@ struct multiline : UIViewRepresentable {
         return textview
     }
     
-    func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<multiline>) {
+    func updateUIView(_ uiView: UITextView, context: UIViewRepresentableContext<MultilineTextField>) {
         
         uiView.text = txt
     }
     
     class Coordinator : NSObject,UITextViewDelegate{
         
-        var parent : multiline
+        var parent : MultilineTextField
         
-        init(parent1 : multiline) {
+        init(parent1 : MultilineTextField) {
             
             parent = parent1
         }

@@ -19,13 +19,13 @@ struct PlanRow: View {
     }()
 
     var body: some View {
-        VStack(alignment: .leading) {
+//        VStack(alignment: .leading) {
 
             HStack {
                 // Add image box here
-                Image("placeholder").resizable().scaledToFit()
+                Image("placeholder").resizable().scaledToFit().frame(width: 88)
 
-                VStack {
+                VStack(alignment: .leading) {
                     Text(plan.title)
                         .font(.title)
 
@@ -40,7 +40,7 @@ struct PlanRow: View {
 
                 }
             }
-        }
+//        }
     }
 }
 

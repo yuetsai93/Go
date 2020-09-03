@@ -30,7 +30,6 @@ struct ContentView: View {
                         MainPageView(menuShown: self.$menuShown)
                             .frame(width: g.size.width, height: g.size.height)
                             .offset(x: self.menuShown ? g.size.width / 1.6 : 0)
-        //                    .disabled(self.menuShown ? true : false)
                         if self.menuShown {
                             SideMenuView()
                                 .frame(width: g.size.width/1.6)
@@ -41,7 +40,7 @@ struct ContentView: View {
                    
                 }
     //        .navigationBarTitleView(Image("goIcon"))
-            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarTitle("")
             .navigationBarItems(leading:
                 HStack {
                     Button(action: {withAnimation {
@@ -62,7 +61,7 @@ struct ContentView: View {
                 // TODO: hardcoded frame for now, change it after finishing the logics
                 Image("goIcon").resizable().scaledToFit().frame(width:40, height:40)
                 Text("Go!").font(.title)
-            }
+            }.frame(height: 40)
         }
     }
 }
