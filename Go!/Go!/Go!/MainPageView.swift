@@ -19,26 +19,51 @@ struct MainPageView: View {
         // The main screen of Go!
         
         return NavigationView {
-          List {
-            ForEach(plans, id: \.title) {
-              PlanRow(plan: $0)
+            ZStack {
+                List {
+                    ForEach(plans, id: \.title) {
+                      PlanRow(plan: $0)
+                    }
+                    .onDelete(perform: deletePlan)
+               }
+              .sheet(isPresented: $newPageShown) {
+                  NewPlanView(newPageShown: self.$newPageShown) { title, status, rating, location, genre, startDate, endDate, content in
+                      self.newPlan(title: title, status: status, rating: rating,
+                                   location: location, genre: genre, startDate: startDate,
+                                   endDate: endDate, content: content)
+                      self.newPageShown = false
+                    }
+               }
+                
+                HStack {
+                    Spacer()
+                    VStack {
+                        Spacer()
+                        Button(action: { self.newPageShown.toggle() }) {
+                                            Image("newIcon")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .padding()
+                                                // change to not using hardcoded values later
+                                                .frame(width: 80, height: 80)
+                                                .foregroundColor(Color.white)
+                                                .background(MyColors.greengray)
+                                                .clipShape(Circle())
+                                                .shadow(color: MyColors.greengray.opacity(0.3), radius: 3, x: 3, y: 3)
+                        }.padding(.trailing)
+                    }
+                }
             }
-            .onDelete(perform: deletePlan)
-          }
-          .sheet(isPresented: $newPageShown) {
-            NewPlanView(newPageShown: self.$newPageShown) { title, status, rating, location, genre, startDate, endDate, content in
-              self.newPlan(title: title, status: status, rating: rating,
-                           location: location, genre: genre, startDate: startDate,
-                           endDate: endDate, content: content)
-              self.newPageShown = false
-            }
-          }
-          .navigationBarTitle(Text("Plans"))
-            .navigationBarItems(trailing:
-              Button(action: { self.newPageShown.toggle() }) {
-                Image(systemName: "plus")
-              }
-          )
+              .navigationBarTitle(Text("Plans"))
+//            .navigationBarItems(trailing:
+//              Button(action: { self.newPageShown.toggle() }) {
+//                Image(systemName: "plus")
+//              }
+//          )
+            
+//            .frame(width: g.size.width/5, height: g.size.height/8)
+//            .offset(x: g.size.width - g.size.width / 6 * 1.5, y: g.size.height - g.size.width / 5 * 1.5)
+           
         }
         
         
