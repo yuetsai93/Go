@@ -32,7 +32,7 @@ struct NewPlanView: View {
     @State var endDate = Date()
     @State var content = ""
 
-    let onComplete: (String, String, Double, String, String, Date, Date, String) -> Void
+    let onComplete: (String, String, String, Double, String, Date, Date, String) -> Void
 
     
     var dateFormatter: DateFormatter {
@@ -128,10 +128,10 @@ struct NewPlanView: View {
     private func savePlan() {
         onComplete(
         title.isEmpty ? "" : title,
+        tagList[selectedTagIndex],
         statusList[selectedStatusIndex],
         rating,
         location.isEmpty ? "" : location,
-        tagList[selectedTagIndex],
         startDate,
         endDate,
         content.isEmpty ? "" : content)

@@ -46,6 +46,7 @@ struct SideMenuView: View {
 //                    }
                 }.frame(width: g.size.width)
                 
+                
                 Spacer()
                 
                 // Bottom row

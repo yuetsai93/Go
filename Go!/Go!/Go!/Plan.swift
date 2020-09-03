@@ -11,10 +11,10 @@ import Foundation
 struct Plan {
     
     let title: String
+    let tag: String
     let status: String
     let rating: Double
     let location: String
-    let genre: String
     let startDate: Date
     let endDate: Date
     let content: String

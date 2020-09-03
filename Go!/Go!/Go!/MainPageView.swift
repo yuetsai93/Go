@@ -54,7 +54,8 @@ struct MainPageView: View {
                     }
                 }
             }
-//              .navigationBarTitle(Text("Plans"))
+              .navigationBarTitle(Text("Plans"))
+        .navigationBarHidden(true)
         }
         
         
