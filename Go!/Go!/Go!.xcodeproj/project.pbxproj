@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3319C28D2509EF83004B5877 /* Go.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3319C28B2509EF83004B5877 /* Go.xcdatamodeld */; };
 		3337477124FA4736009003FE /* NewPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3337477024FA4736009003FE /* NewPlanView.swift */; };
 		3337477324FA474C009003FE /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3337477224FA474C009003FE /* MainPageView.swift */; };
 		33422BEC24F8DB290041D2AD /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33422BEB24F8DB290041D2AD /* SideMenuView.swift */; };
@@ -19,10 +20,10 @@
 		33BCDF3C24F2558100936D6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33BCDF3A24F2558100936D6C /* LaunchScreen.storyboard */; };
 		33BCDF4624F57AA800936D6C /* PlanRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF4524F57AA800936D6C /* PlanRow.swift */; };
 		33BCDF4824F5992500936D6C /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BCDF4724F5992500936D6C /* MyColors.swift */; };
-		33E6B80624FF584400B19235 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E6B80524FF584400B19235 /* Plan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3319C28C2509EF83004B5877 /* Go.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Go.xcdatamodel; sourceTree = "<group>"; };
 		3337477024FA4736009003FE /* NewPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlanView.swift; sourceTree = "<group>"; };
 		3337477224FA474C009003FE /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 		33422BEB24F8DB290041D2AD /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		33BCDF3D24F2558100936D6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33BCDF4524F57AA800936D6C /* PlanRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanRow.swift; sourceTree = "<group>"; };
 		33BCDF4724F5992500936D6C /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
-		33E6B80524FF584400B19235 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,13 +80,13 @@
 		33BCDF2E24F2557B00936D6C /* Go! */ = {
 			isa = PBXGroup;
 			children = (
+				3319C28B2509EF83004B5877 /* Go.xcdatamodeld */,
 				33BCDF2F24F2557B00936D6C /* AppDelegate.swift */,
 				33BCDF3124F2557B00936D6C /* SceneDelegate.swift */,
 				33BCDF3324F2557B00936D6C /* ContentView.swift */,
 				3337477024FA4736009003FE /* NewPlanView.swift */,
 				3337477224FA474C009003FE /* MainPageView.swift */,
 				33BCDF4524F57AA800936D6C /* PlanRow.swift */,
-				33E6B80524FF584400B19235 /* Plan.swift */,
 				33BCDF3524F2558100936D6C /* Assets.xcassets */,
 				33BCDF4724F5992500936D6C /* MyColors.swift */,
 				33422BEB24F8DB290041D2AD /* SideMenuView.swift */,
@@ -181,11 +181,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				33422BEC24F8DB290041D2AD /* SideMenuView.swift in Sources */,
+				3319C28D2509EF83004B5877 /* Go.xcdatamodeld in Sources */,
 				33BCDF4624F57AA800936D6C /* PlanRow.swift in Sources */,
 				3337477324FA474C009003FE /* MainPageView.swift in Sources */,
 				3337477124FA4736009003FE /* NewPlanView.swift in Sources */,
 				33BCDF4824F5992500936D6C /* MyColors.swift in Sources */,
-				33E6B80624FF584400B19235 /* Plan.swift in Sources */,
 				33BCDF3024F2557B00936D6C /* AppDelegate.swift in Sources */,
 				33BCDF3224F2557B00936D6C /* SceneDelegate.swift in Sources */,
 				33BCDF3424F2557B00936D6C /* ContentView.swift in Sources */,
@@ -384,6 +384,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3319C28B2509EF83004B5877 /* Go.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3319C28C2509EF83004B5877 /* Go.xcdatamodel */,
+			);
+			currentVersion = 3319C28C2509EF83004B5877 /* Go.xcdatamodel */;
+			path = Go.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 33BCDF2424F2557B00936D6C /* Project object */;
 }

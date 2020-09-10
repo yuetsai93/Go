@@ -10,7 +10,17 @@ import SwiftUI
 
 // The home page of ths app. Users will see this page after the launch screen.
 struct MainPageView: View {
-    @State var plans: [Plan] = []
+
+    @FetchRequest(
+      entity: Plan.entity(),
+      sortDescriptors: [
+//        NSSortDescriptor(keyPath: \Plan.title, ascending: true)
+      ]
+    // Add predicate: NSPredicate(format: ...) later for filtering
+    ) var plans: FetchedResults<Plan>
+
+    @Environment(\.managedObjectContext) var managedObjectContext
+
     @State var newPageShown = false
     @Binding var menuShown: Bool
     
@@ -152,19 +162,36 @@ struct MainPageView: View {
     }
     
     func deletePlan(at offsets: IndexSet) {
-        plans.remove(atOffsets: offsets)
+//        plans.remove(atOffsets: offsets)
     }
     
     func newPlan(title: String, tag: String, status: String, rating: Double,
                  location: String, startDate: Date,
                  endDate: Date, content: String) {
         
-        let newPlan = Plan(title: title, tag: tag, status: status, rating: rating,
-                           location: location, startDate: startDate,
-                           endDate: endDate, content: content)
-        plans.append(newPlan)
+        let newPlan = Plan(context: managedObjectContext)
+        
+        newPlan.title = title
+        newPlan.tag = tag
+        newPlan.status = status
+        newPlan.rating = rating
+        newPlan.location = location
+        newPlan.startDate = startDate
+        newPlan.endDate = endDate
+        newPlan.content = content
+
+        saveContext()
         
     }
+    
+    func saveContext() {
+      do {
+        try managedObjectContext.save()
+      } catch {
+        print("Error saving managed object context: \(error)")
+      }
+    }
+
     
 }
 

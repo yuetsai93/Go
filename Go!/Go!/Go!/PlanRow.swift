@@ -26,15 +26,20 @@ struct PlanRow: View {
                 Image("placeholder").resizable().scaledToFit().frame(width: 88)
 
                 VStack(alignment: .leading) {
-                    Text(plan.title)
+                    plan.title.map(Text.init)
                         .font(.title)
 
                     Group {
-                        Text(plan.tag)
+                        plan.tag.map(Text.init)
                         Text("\(plan.rating, specifier: "%.1f")")
-                        (Text(PlanRow.self.dateFormatter.string(from: plan.startDate)) +
-                            Text(" - ") +
-                            Text(PlanRow.self.dateFormatter.string(from: plan.endDate)))
+                        plan.startDate.map {
+                            Text(PlanRow.self.dateFormatter.string(from: $0))
+                        }
+//                            +
+//                            Text(" - ") +
+                        plan.endDate.map {
+                            Text(PlanRow.self.dateFormatter.string(from: $0))
+                        }
                     }
                     .font(.caption)
 
