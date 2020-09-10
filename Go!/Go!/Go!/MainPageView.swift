@@ -162,8 +162,16 @@ struct MainPageView: View {
     }
     
     func deletePlan(at offsets: IndexSet) {
-//        plans.remove(atOffsets: offsets)
+        
+      offsets.forEach { index in
+        let plan = self.plans[index]
+        self.managedObjectContext.delete(plan)
+      }
+        
+      saveContext()
+        
     }
+
     
     func newPlan(title: String, tag: String, status: String, rating: Double,
                  location: String, startDate: Date,
