@@ -30,7 +30,7 @@ struct PlanRow: View {
                         .font(.title)
 
                     Group {
-                        Text(plan.genre)
+                        Text(plan.tag)
                         Text("\(plan.rating, specifier: "%.1f")")
                         (Text(PlanRow.self.dateFormatter.string(from: plan.startDate)) +
                             Text(" - ") +

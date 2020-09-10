@@ -27,9 +27,9 @@ struct MainPageView: View {
                     .onDelete(perform: deletePlan)
                }
               .sheet(isPresented: $newPageShown) {
-                  NewPlanView(newPageShown: self.$newPageShown) { title, status, rating, location, genre, startDate, endDate, content in
-                      self.newPlan(title: title, status: status, rating: rating,
-                                   location: location, genre: genre, startDate: startDate,
+                  NewPlanView(newPageShown: self.$newPageShown) { title, tag, status, rating, location, startDate, endDate, content in
+                    self.newPlan(title: title, tag: tag, status: status, rating: rating,
+                                   location: location, startDate: startDate,
                                    endDate: endDate, content: content)
                       self.newPageShown = false
                     }
@@ -155,12 +155,12 @@ struct MainPageView: View {
         plans.remove(atOffsets: offsets)
     }
     
-    func newPlan(title: String, status: String, rating: Double,
-                 location: String, genre: String, startDate: Date,
+    func newPlan(title: String, tag: String, status: String, rating: Double,
+                 location: String, startDate: Date,
                  endDate: Date, content: String) {
         
-        let newPlan = Plan(title: title, status: status, rating: rating,
-                           location: location, genre: genre, startDate: startDate,
+        let newPlan = Plan(title: title, tag: tag, status: status, rating: rating,
+                           location: location, startDate: startDate,
                            endDate: endDate, content: content)
         plans.append(newPlan)
         
